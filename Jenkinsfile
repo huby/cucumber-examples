@@ -19,5 +19,10 @@ npm install'''
         sh 'npm run acceptance:tests'
       }
     }
+    stage('') {
+      steps {
+        sh 'curl \'https://download.jboss.org/wildfly/18.0.0.Final/wildfly-18.0.0.Final.zip\' -H \'Connection: keep-alive\' --compressed'
+      }
+    }
   }
 }
