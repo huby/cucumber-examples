@@ -1,8 +1,7 @@
 pipeline {
   agent {
     docker {
-      image 'node:10-alpine'
-      args '-v /Users/jean-marcelbelmont/jenkins_data'
+      image 'jboss/wildfly'
     }
 
   }
@@ -19,7 +18,7 @@ npm install'''
         sh 'npm run acceptance:tests'
       }
     }
-    stage('') {
+    stage('error') {
       steps {
         sh 'curl \'https://download.jboss.org/wildfly/18.0.0.Final/wildfly-18.0.0.Final.zip\' -H \'Connection: keep-alive\' --compressed'
       }
